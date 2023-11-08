@@ -7,7 +7,7 @@ import { HousingLocation } from "./housing-location";
 export class HousingService {
   readonly baseUrl = "https://angular.dev/assets/tutorials/common";
 
-  housingLocationList: HousingLocation[] = [
+  protected housingLocationList: HousingLocation[] = [
     {
       id: 0,
       name: "Acme Fresh Start Housing",
@@ -109,4 +109,11 @@ export class HousingService {
       laundry: true,
     },
   ];
+
+  getAllHousingLocations(): HousingLocation[] {
+    return this.housingLocationList;
+  }
+  getHousingLocationById(id: number): HousingLocation | undefined {
+    return this.housingLocationList.find((housingLocation) => housingLocation.id === id);
+  }
 }
