@@ -1,10 +1,11 @@
-import { Component } from '@angular/core'
-import { HomeComponent } from './home/home.component'
+import { Component } from "@angular/core";
+import { HomeComponent } from "./home/home.component";
+import { RouterModule } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [HomeComponent],
+  imports: [HomeComponent, RouterModule],
 
   template: `<main>
     <header class="brand-name">
@@ -17,12 +18,12 @@ import { HomeComponent } from './home/home.component'
     </header>
 
     <section class="content">
-      <app-home />
+      <router-outlet />
     </section>
   </main>`,
 
-  styleUrls: ['./app.component.css']
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = 'hello world'
+  title = "hello world";
 }
